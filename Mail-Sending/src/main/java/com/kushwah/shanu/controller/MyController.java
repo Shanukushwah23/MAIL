@@ -21,6 +21,11 @@ public class MyController {
 
     @Autowired
     private EmailService emailService;
+    
+    @GetMapping("/")
+    public String health() {
+        return "Mail service is running 🚀";
+    }
 
     @PostMapping
     public ResponseEntity<String> bookWedding(@RequestBody BookingRequest request) {
@@ -28,6 +33,7 @@ public class MyController {
         return ResponseEntity.ok("Booking sent");
     }
 }
+
 
 
 
